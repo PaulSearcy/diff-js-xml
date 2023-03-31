@@ -63,7 +63,10 @@ const compareObjects = (
             const diffResult: IDiffResultModel = {
               path: formattedKey,
               resultType: "difference in element value",
-              message: `field ${formattedKey} has lhs value ${resultValueA} and rhs value ${resultValueB}`
+              message: {
+                lhs: resultValueA,
+                rhs: resultValueB
+              }
             }
 
             return differences.push(diffResult)
